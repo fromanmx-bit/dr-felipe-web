@@ -1,0 +1,117 @@
+:root {
+  --azul-profundo: #0b2e4f;
+  --turquesa: #2fa9a1;
+  --blanco: #ffffff;
+  --gris-neutro: #f2f3f4;
+  --gris-texto: #4a4a4a;
+  --dorado-suave: #c9a568;
+
+  --fuente-base: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --espacio-sm: 0.75rem;
+  --espacio-md: 1.5rem;
+  --espacio-lg: 3rem;
+  --espacio-xl: 5rem;
+
+  --ancho-maximo: 1100px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente-base);
+  color: var(--gris-texto);
+  background-color: var(--blanco);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--azul-profundo);
+  line-height: 1.25;
+  margin: 0 0 var(--espacio-md);
+}
+
+p {
+  margin: 0 0 var(--espacio-md);
+}
+
+a {
+  color: var(--turquesa);
+}
+
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho-maximo);
+  margin: 0 auto;
+  padding: 0 var(--espacio-md);
+}
+
+.seccion {
+  padding: var(--espacio-xl) 0;
+}
+
+.seccion:nth-child(even) {
+  background-color: var(--gris-neutro);
+}
+
+@media (max-width: 640px) {
+  .seccion {
+    padding: var(--espacio-lg) 0;
+  }
+}
+
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.boton {
+  display: inline-block;
+  padding: 0.85rem 1.75rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1rem;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.boton--primario {
+  background-color: var(--turquesa);
+  color: var(--blanco);
+  border: 1px solid var(--turquesa);
+}
+
+.boton--primario:hover {
+  background-color: var(--azul-profundo);
+  border-color: var(--azul-profundo);
+}
+
+.boton--secundario {
+  background-color: transparent;
+  color: var(--azul-profundo);
+  border: 1px solid var(--azul-profundo);
+}
+
+.boton--secundario:hover {
+  background-color: var(--azul-profundo);
+  color: var(--blanco);
+}

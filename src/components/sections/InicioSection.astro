@@ -1,0 +1,190 @@
+<section id="inicio" class="hero">
+  <div class="contenedor hero__grid">
+    <div class="hero__contenido">
+      <p class="hero__etiqueta">Pediatría y Neonatología en Saltillo</p>
+      <h1 class="hero__titulo">Dr. Felipe Hernández Serna</h1>
+
+      <p class="hero__apoyo">
+        Atención especializada para recién nacidos, bebés y niños, con una
+        práctica médica basada en experiencia clínica, actualización
+        constante y trato humano.
+      </p>
+
+      <p class="hero__complementario">
+        El acompañamiento médico comienza desde los primeros días de vida.
+        Cada consulta debe ayudar a los padres a comprender mejor la salud de
+        sus hijos, resolver dudas y tomar decisiones con mayor tranquilidad.
+      </p>
+
+      <p class="hero__ubicacion">Saltillo, Coahuila</p>
+
+      <div class="hero__botones">
+        <a
+          class="boton boton--primario"
+          href="https://wa.me/525563176446"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Agendar por WhatsApp
+        </a>
+        <a class="boton boton--secundario" href="#sobre-el-doctor">
+          Conocer al Dr. Felipe
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__visual">
+      <div class="hero__foto">
+        <span class="hero__foto-texto">Fotografía profesional del Dr. Felipe</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="contenedor hero__cierre">
+    <div class="hero__roble">
+      <span class="hero__roble-texto">Símbolo del roble de huellas</span>
+    </div>
+    <p class="hero__lema">&ldquo;Cada nueva huella, una historia que contar.&rdquo;</p>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: var(--espacio-lg) 0 var(--espacio-xl);
+    background: linear-gradient(180deg, rgba(47, 169, 161, 0.06) 0%, var(--blanco) 55%);
+  }
+
+  .hero__grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-lg);
+  }
+
+  .hero__etiqueta {
+    display: inline-block;
+    margin: 0 0 var(--espacio-sm);
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--dorado-suave);
+    color: var(--turquesa);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .hero__titulo {
+    font-size: 2.25rem;
+    margin-bottom: var(--espacio-sm);
+  }
+
+  .hero__apoyo {
+    font-size: 1.1rem;
+    color: var(--azul-profundo);
+  }
+
+  .hero__complementario {
+    color: var(--gris-texto);
+  }
+
+  .hero__ubicacion {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--gris-texto);
+    margin-bottom: var(--espacio-md);
+  }
+
+  .hero__botones {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-sm);
+  }
+
+  .hero__visual {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero__foto {
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 4 / 5;
+    border: 1px dashed rgba(11, 46, 79, 0.3);
+    border-radius: 12px;
+    background-color: rgba(11, 46, 79, 0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--espacio-md);
+  }
+
+  .hero__foto-texto {
+    color: var(--azul-profundo);
+    opacity: 0.6;
+    font-size: 0.95rem;
+  }
+
+  .hero__cierre {
+    margin-top: var(--espacio-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--espacio-sm);
+    text-align: center;
+  }
+
+  .hero__roble {
+    width: 64px;
+    aspect-ratio: 3 / 4;
+    border: 1px dashed rgba(11, 46, 79, 0.25);
+    border-radius: 8px;
+    background-color: rgba(47, 169, 161, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem;
+  }
+
+  .hero__roble-texto {
+    font-size: 0.65rem;
+    color: var(--azul-profundo);
+    opacity: 0.55;
+    line-height: 1.2;
+  }
+
+  .hero__lema {
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--azul-profundo);
+    max-width: 32rem;
+    margin: 0;
+  }
+
+  @media (min-width: 900px) {
+    .hero__grid {
+      flex-direction: row;
+      align-items: center;
+      gap: var(--espacio-xl);
+    }
+
+    .hero__contenido {
+      flex: 1 1 55%;
+    }
+
+    .hero__visual {
+      flex: 1 1 45%;
+    }
+
+    .hero__titulo {
+      font-size: 3rem;
+    }
+
+    .hero__botones {
+      flex-direction: row;
+    }
+
+    .hero__roble {
+      width: 96px;
+    }
+  }
+</style>

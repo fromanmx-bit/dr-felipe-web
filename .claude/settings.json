@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//tmp/**)",
+      "Bash(powershell -NoProfile -Command 'Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like '\\\\''*astro dev*'\\\\'' } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force }')",
+      "Bash(rm -f /tmp/hero-check.html /tmp/astro-dev.log)"
+    ]
+  }
+}

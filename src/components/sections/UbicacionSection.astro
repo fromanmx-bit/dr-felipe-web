@@ -1,0 +1,33 @@
+<section id="ubicacion" class="seccion">
+  <div class="contenedor">
+    <h2>Ubicación</h2>
+    <p>Blvd. Venustiano Carranza 4036, Consultorio 75, C.P. 25230, Saltillo, Coahuila</p>
+    <div class="ubicacion__mapa">
+      <iframe
+        title="Ubicación del consultorio"
+        src="https://www.google.com/maps?q=Blvd.+Venustiano+Carranza+4036,+Saltillo,+Coahuila&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ubicacion__mapa {
+    position: relative;
+    width: 100%;
+    padding-top: 45%;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+
+  .ubicacion__mapa iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+</style>
