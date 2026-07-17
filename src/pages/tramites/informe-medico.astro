@@ -1,0 +1,17 @@
+---
+import PlantillaTramite from '../../components/tramites/PlantillaTramite.astro';
+---
+
+<PlantillaTramite
+  titulo="Solicitud de informe médico"
+  descripcion="Proceso para solicitar un informe médico relacionado con la atención del Dr. Felipe Hernández Serna."
+  icono="documento"
+  rutaCanonica="/tramites/informe-medico/"
+  resumen="Puedes solicitar un informe médico indicando al paciente, el documento requerido, el motivo de la solicitud y el destinatario."
+  pasos={[
+    'Contacta al consultorio por WhatsApp o correo para iniciar la solicitud.',
+    'Indica el nombre del paciente, el tipo de informe o documento requerido, el motivo de la solicitud y a quién va dirigido.',
+    'El consultorio revisará la solicitud y confirmará disponibilidad, requisitos, plazo de entrega y, cuando corresponda, costo.',
+  ]}
+  notaExtra="La solicitud en línea con carga de documentos y seguimiento de estatus está pendiente de desarrollo."
+/>

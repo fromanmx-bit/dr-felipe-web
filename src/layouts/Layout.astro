@@ -4,9 +4,11 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description: string;
+  rutaCanonica?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, rutaCanonica = '' } = Astro.props;
+const urlCanonica = new URL(rutaCanonica, Astro.site ?? 'https://drfelipehs.com');
 ---
 
 <!doctype html>
@@ -17,15 +19,19 @@ const { title, description } = Astro.props;
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://drfelipehs.com" />
+    <link rel="canonical" href={urlCanonica} />
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content="https://drfelipehs.com" />
+    <meta property="og:url" content={urlCanonica} />
     <meta property="og:locale" content="es_MX" />
+    <meta property="og:site_name" content="Dr. Felipe Hernández Serna" />
+
+    <meta name="theme-color" content="#0b2b46" />
   </head>
   <body>
+    <a class="salto-enlace" href="#contenido-principal">Saltar al contenido principal</a>
     <slot />
   </body>
 </html>

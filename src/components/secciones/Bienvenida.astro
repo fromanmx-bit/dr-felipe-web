@@ -1,0 +1,50 @@
+---
+import MarcoImagen from '../ui/MarcoImagen.astro';
+---
+
+<section id="bienvenida" class="seccion bienvenida" aria-label="Bienvenida">
+  <div class="contenedor bienvenida__grid">
+    <div class="bienvenida__texto">
+      <p class="etiqueta-superior">Bienvenida</p>
+      <h2>Cuidar la salud de un niño también significa acompañar a su familia</h2>
+      <p>
+        La atención pediátrica no consiste únicamente en identificar síntomas.
+        También implica escuchar, explicar y ayudar a madres, padres y
+        tutores a comprender lo que ocurre durante cada etapa del
+        crecimiento.
+      </p>
+      <p>
+        Cada paciente tiene una historia diferente. Por ello, la valoración
+        se realiza con atención, criterio clínico y respeto por las
+        necesidades particulares del niño y de su familia.
+      </p>
+    </div>
+
+    <MarcoImagen
+      variante="editorial"
+      ratio="5 / 4"
+      etiqueta="Fotografía editorial — acompañamiento a las familias"
+      notaDesarrollo="editorial-bienvenida.jpg"
+      conMarco={false}
+    />
+  </div>
+</section>
+
+<style>
+  .bienvenida__grid {
+    display: grid;
+    gap: var(--e-lg);
+    align-items: center;
+  }
+
+  .bienvenida__texto p {
+    max-width: 34rem;
+  }
+
+  @media (min-width: 900px) {
+    .bienvenida__grid {
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: var(--e-2xl);
+    }
+  }
+</style>

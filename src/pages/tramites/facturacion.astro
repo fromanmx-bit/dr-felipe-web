@@ -1,0 +1,17 @@
+---
+import PlantillaTramite from '../../components/tramites/PlantillaTramite.astro';
+---
+
+<PlantillaTramite
+  titulo="Facturación"
+  descripcion="Proceso para solicitar la facturación de tu consulta con el Dr. Felipe Hernández Serna."
+  icono="factura"
+  rutaCanonica="/tramites/facturacion/"
+  resumen="Si necesitas una factura por tu consulta o pago realizado, puedes iniciar la solicitud proporcionando tus datos fiscales."
+  pasos={[
+    'Contacta al consultorio por WhatsApp o correo indicando que deseas solicitar una factura.',
+    'Proporciona tus datos fiscales (razón social, RFC, uso de CFDI y correo de envío) y, cuando corresponda, tu comprobante de pago.',
+    'El consultorio revisará la información y confirmará si procede la emisión, así como el plazo estimado.',
+  ]}
+  notaExtra="Por el momento este proceso se gestiona directamente con el consultorio; la solicitud en línea con envío seguro de datos está en desarrollo."
+/>

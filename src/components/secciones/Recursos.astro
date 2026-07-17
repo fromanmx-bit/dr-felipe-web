@@ -1,0 +1,153 @@
+---
+const categorias = [
+  {
+    nombre: 'Neonatología',
+    articulos: [
+      {
+        titulo: '¿Qué hace un neonatólogo?',
+        resumen: 'Explicación general sobre el enfoque de la Neonatología y su papel en la valoración especializada del recién nacido.',
+      },
+      {
+        titulo: 'Cuidados básicos durante los primeros días del recién nacido',
+        resumen: 'Guía educativa y prudente sobre aspectos generales que las familias suelen observar durante los primeros días de vida.',
+      },
+      {
+        titulo: 'Prepararse para la primera consulta del bebé',
+        resumen: 'Orientación sobre información, documentos y dudas que pueden ayudar a aprovechar mejor la primera valoración.',
+      },
+      {
+        titulo: 'Cambios frecuentes durante las primeras semanas de vida',
+        resumen: 'Contenido educativo sobre cambios generales que pueden presentarse en las primeras semanas, sin sustituir la valoración médica.',
+      },
+      {
+        titulo: 'Cuándo solicitar orientación médica para un recién nacido',
+        resumen: 'Recurso para recordar que las dudas o cambios de salud en un recién nacido deben consultarse con personal médico.',
+      },
+    ],
+  },
+  {
+    nombre: 'Pediatría',
+    articulos: [
+      {
+        titulo: 'Crecimiento y desarrollo durante la infancia',
+        resumen: 'Introducción educativa sobre el seguimiento del crecimiento y desarrollo en las diferentes etapas de la infancia.',
+      },
+      {
+        titulo: 'Cómo prepararse para una consulta pediátrica',
+        resumen: 'Recomendaciones generales para organizar información y dudas antes de acudir a consulta.',
+      },
+      {
+        titulo: 'Información útil que conviene llevar al pediatra',
+        resumen: 'Listado orientativo de antecedentes, estudios, medicamentos y preguntas que pueden facilitar la conversación médica.',
+      },
+      {
+        titulo: 'La importancia de resolver dudas durante la consulta',
+        resumen: 'Texto sobre la comunicación clara entre la familia y el médico como parte del acompañamiento pediátrico.',
+      },
+      {
+        titulo: 'Señales generales que justifican solicitar valoración médica',
+        resumen: 'Contenido prudente para orientar a las familias a buscar valoración médica cuando noten cambios o dudas relevantes.',
+      },
+    ],
+  },
+  {
+    nombre: 'Familias',
+    articulos: [
+      {
+        titulo: 'Preguntas útiles para hacer durante la consulta',
+        resumen: 'Ideas para que madres, padres y tutores organicen sus dudas antes de hablar con el médico.',
+      },
+      {
+        titulo: 'Cómo organizar los antecedentes médicos de un niño',
+        resumen: 'Recomendaciones generales para reunir información médica previa de forma clara y ordenada.',
+      },
+      {
+        titulo: 'La importancia del seguimiento médico',
+        resumen: 'Explicación educativa sobre el valor de dar continuidad a las valoraciones médicas cuando el caso lo requiere.',
+      },
+      {
+        titulo: 'Cómo explicar síntomas y cambios de salud con claridad',
+        resumen: 'Orientación para describir cambios, tiempos de evolución y dudas de manera útil durante una consulta.',
+      },
+    ],
+  },
+];
+---
+
+<section id="recursos" class="seccion" aria-label="Recursos y artículos">
+  <div class="contenedor">
+    <div class="encabezado-seccion encabezado-seccion--centrado">
+      <p class="etiqueta-superior">Recursos y artículos</p>
+      <h2>Información para acompañar cada etapa</h2>
+      <p>
+        Este espacio reunirá contenidos educativos sobre Pediatría,
+        Neonatología y cuidados generales de la infancia. Los artículos se
+        encuentran en preparación y pasarán por revisión médica antes de su
+        publicación.
+      </p>
+    </div>
+
+    <div class="nota-aviso recursos__aviso">
+      <p>La información tiene fines educativos y no sustituye una valoración médica.</p>
+    </div>
+
+    <div class="recursos__categorias">
+      {categorias.map((categoria) => (
+        <div class="recursos__categoria">
+          <h3 class="recursos__categoria-titulo">{categoria.nombre}</h3>
+          <div class="rejilla rejilla--3">
+            {categoria.articulos.map((articulo) => (
+              <article class="tarjeta recursos__tarjeta">
+                <span class="insignia insignia--proximo">Pendiente de revisión médica</span>
+                <h4 class="recursos__titulo-articulo">{articulo.titulo}</h4>
+                <p>{articulo.resumen}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .recursos__aviso {
+    max-width: var(--ancho-lectura);
+    margin: 0 auto var(--e-2xl);
+    text-align: center;
+  }
+
+  .recursos__categorias {
+    display: grid;
+    gap: var(--e-xl);
+  }
+
+  .recursos__categoria-titulo {
+    font-family: var(--fuente-base);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-turquesa-texto);
+    margin-bottom: var(--e-sm);
+  }
+
+  .recursos__tarjeta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    box-shadow: none;
+    background-color: var(--color-crema);
+    border-color: var(--color-borde);
+  }
+
+  .recursos__titulo-articulo {
+    font-size: 1.05rem;
+    margin: 0;
+  }
+
+  .recursos__tarjeta p {
+    font-size: 0.92rem;
+    margin: 0;
+  }
+</style>

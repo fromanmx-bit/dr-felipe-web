@@ -1,0 +1,114 @@
+---
+import Icono from '../ui/Icono.astro';
+
+const tramites = [
+  {
+    icono: 'factura' as const,
+    titulo: 'Facturación',
+    texto: 'Conoce el proceso para proporcionar tus datos fiscales y solicitar tu factura.',
+    href: '/tramites/facturacion/',
+  },
+  {
+    icono: 'documento' as const,
+    titulo: 'Solicitud de informe médico',
+    texto: 'Inicia la solicitud de un informe, identificando al paciente, el motivo y el destinatario.',
+    href: '/tramites/informe-medico/',
+  },
+  {
+    icono: 'correo' as const,
+    titulo: 'Envío de documentos',
+    texto: 'Consulta cómo hacer llegar al consultorio los documentos que respaldan tu trámite.',
+    href: '/tramites/envio-documentos/',
+  },
+];
+---
+
+<section id="tramites" class="seccion" aria-label="Trámites para pacientes">
+  <div class="contenedor">
+    <div class="encabezado-seccion encabezado-seccion--centrado">
+      <p class="etiqueta-superior">Trámites</p>
+      <h2>Trámites para pacientes</h2>
+      <p>
+        Estos accesos explican el proceso a seguir para cada trámite. La
+        integración segura de envío y pago está pendiente.
+      </p>
+    </div>
+
+    <div class="rejilla rejilla--3">
+      {tramites.map((tramite) => (
+        <a class="tarjeta tramites__tarjeta" href={tramite.href}>
+          <span class="tramites__icono-envoltura">
+            <Icono nombre={tramite.icono} clase="tramites__icono" />
+          </span>
+          <h3 class="tramites__titulo">{tramite.titulo}</h3>
+          <p>{tramite.texto}</p>
+          <span class="tramites__enlace">Ver proceso →</span>
+        </a>
+      ))}
+    </div>
+
+    <div class="nota-aviso tramites__aviso">
+      <p>
+        La solicitud no implica emisión automática. El consultorio
+        confirmará los requisitos, disponibilidad, plazo y, cuando
+        corresponda, costo.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .tramites__tarjeta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    text-decoration: none;
+    color: inherit;
+    transition: transform var(--duracion) ease, box-shadow var(--duracion) ease;
+  }
+
+  .tramites__tarjeta:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-suave);
+  }
+
+  .tramites__icono-envoltura {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: var(--radio-sm);
+    background-color: var(--color-turquesa-suave);
+  }
+
+  .tramites__icono {
+    width: 22px;
+    height: 22px;
+    color: var(--color-turquesa);
+  }
+
+  .tramites__titulo {
+    margin: 0;
+    font-size: 1.15rem;
+  }
+
+  .tramites__tarjeta p {
+    margin: 0;
+    font-size: 0.94rem;
+  }
+
+  .tramites__enlace {
+    margin-top: auto;
+    padding-top: 0.4rem;
+    font-weight: 600;
+    color: var(--color-azul-profundo);
+    font-size: 0.9rem;
+  }
+
+  .tramites__aviso {
+    max-width: var(--ancho-lectura);
+    margin: var(--e-xl) auto 0;
+    text-align: center;
+  }
+</style>

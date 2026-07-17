@@ -1,0 +1,17 @@
+---
+import PlantillaTramite from '../../components/tramites/PlantillaTramite.astro';
+---
+
+<PlantillaTramite
+  titulo="Envío de documentos"
+  descripcion="Proceso para hacer llegar al consultorio los documentos que respaldan un trámite con el Dr. Felipe Hernández Serna."
+  icono="correo"
+  rutaCanonica="/tramites/envio-documentos/"
+  resumen="Si tu trámite requiere adjuntar documentos, como estudios previos o comprobantes, este es el proceso general para hacerlos llegar."
+  pasos={[
+    'Confirma con el consultorio, por WhatsApp o correo, qué documentos son necesarios para tu trámite.',
+    'Prepara los documentos solicitados en un formato legible.',
+    'Envía los documentos por el medio que te indique el consultorio y espera la confirmación de recepción.',
+  ]}
+  notaExtra="El envío seguro de documentos directamente desde el sitio web está en desarrollo. Por ahora, ningún documento debe adjuntarse a través de esta página."
+/>

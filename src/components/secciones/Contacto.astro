@@ -1,0 +1,157 @@
+---
+import Icono from '../ui/Icono.astro';
+import MarcoImagen from '../ui/MarcoImagen.astro';
+---
+
+<section id="contacto" class="seccion seccion--cremosa" aria-label="Agenda, contacto y ubicación">
+  <div class="contenedor">
+    <div class="encabezado-seccion encabezado-seccion--centrado">
+      <p class="etiqueta-superior">Agenda y contacto</p>
+      <h2>Atención únicamente con cita previa</h2>
+    </div>
+
+    <div class="contacto__grid">
+      <div class="contacto__acciones">
+        <div class="contacto__botones">
+          <a
+            class="boton boton--primario"
+            href="https://wa.me/525563176446"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icono nombre="whatsapp" clase="contacto__boton-icono" />
+            Solicitar por WhatsApp
+          </a>
+          <span class="boton boton--fantasma" aria-disabled="true">
+            <Icono nombre="calendario" clase="contacto__boton-icono" />
+            Agendar en línea
+            <span class="insignia insignia--proximo contacto__insignia">Próximamente</span>
+          </span>
+        </div>
+        <p class="contacto__nota-agenda">
+          El acceso para agendar en línea mediante Google Calendar quedará
+          disponible próximamente. Mientras tanto, la solicitud de citas se
+          realiza por WhatsApp.
+        </p>
+
+        <dl class="contacto__datos">
+          <div class="contacto__dato">
+            <dt>Consultorio</dt>
+            <dd>
+              Dr. Felipe Hernández Serna — Pediatría y Neonatología<br />
+              Blvd. Venustiano Carranza 4036, Consultorio 75<br />
+              C.P. 25230, Saltillo, Coahuila
+            </dd>
+          </div>
+          <div class="contacto__dato">
+            <dt>Celular y WhatsApp</dt>
+            <dd><a href="https://wa.me/525563176446">+52 55 6317 6446</a></dd>
+          </div>
+          <div class="contacto__dato">
+            <dt>Correo</dt>
+            <dd><a href="mailto:drfhernandez@drfelipehs.com">drfhernandez@drfelipehs.com</a></dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="contacto__visual">
+        <div class="contacto__mapa">
+          <iframe
+            title="Ubicación del consultorio"
+            src="https://www.google.com/maps?q=Blvd.+Venustiano+Carranza+4036,+Saltillo,+Coahuila&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <MarcoImagen
+          variante="consultorio"
+          ratio="4 / 3"
+          etiqueta="Fotografía del consultorio"
+          notaDesarrollo="foto-consultorio.jpg"
+          conMarco={false}
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contacto__grid {
+    display: grid;
+    gap: var(--e-2xl);
+  }
+
+  .contacto__botones {
+    display: flex;
+    flex-direction: column;
+    gap: var(--e-xs);
+    margin-bottom: var(--e-sm);
+  }
+
+  .contacto__boton-icono {
+    width: 19px;
+    height: 19px;
+  }
+
+  .contacto__insignia {
+    margin-left: 0.4rem;
+  }
+
+  .contacto__nota-agenda {
+    font-size: 0.88rem;
+    color: var(--color-texto-suave);
+    margin-bottom: var(--e-lg);
+    max-width: 30rem;
+  }
+
+  .contacto__datos {
+    display: grid;
+    gap: var(--e-md);
+    margin: 0;
+  }
+
+  .contacto__dato dt {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-turquesa-texto);
+    margin-bottom: 0.3rem;
+  }
+
+  .contacto__dato dd {
+    margin: 0;
+    color: var(--color-azul-profundo);
+    font-weight: 500;
+  }
+
+  .contacto__visual {
+    display: grid;
+    gap: var(--e-md);
+  }
+
+  .contacto__mapa {
+    position: relative;
+    width: 100%;
+    padding-top: 62%;
+    overflow: hidden;
+    border-radius: var(--radio-md);
+    border: 1px solid var(--color-borde);
+    box-shadow: var(--sombra-tarjeta);
+  }
+
+  .contacto__mapa iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  @media (min-width: 900px) {
+    .contacto__grid {
+      grid-template-columns: 0.95fr 1.05fr;
+      align-items: start;
+    }
+  }
+</style>

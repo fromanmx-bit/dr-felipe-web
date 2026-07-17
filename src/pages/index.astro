@@ -2,26 +2,35 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import InicioSection from '../components/sections/InicioSection.astro';
-import SobreElDrSection from '../components/sections/SobreElDrSection.astro';
-import PediatriaNeonatologiaSection from '../components/sections/PediatriaNeonatologiaSection.astro';
-import FormacionTrayectoriaSection from '../components/sections/FormacionTrayectoriaSection.astro';
-import ConsultorioContactoSection from '../components/sections/ConsultorioContactoSection.astro';
-import UbicacionSection from '../components/sections/UbicacionSection.astro';
+import Hero from '../components/secciones/Hero.astro';
+import Bienvenida from '../components/secciones/Bienvenida.astro';
+import SobreElDoctor from '../components/secciones/SobreElDoctor.astro';
+import Especialidades from '../components/secciones/Especialidades.astro';
+import Trayectoria from '../components/secciones/Trayectoria.astro';
+import FilosofiaRoble from '../components/secciones/FilosofiaRoble.astro';
+import Recursos from '../components/secciones/Recursos.astro';
+import PreguntasFrecuentes from '../components/secciones/PreguntasFrecuentes.astro';
+import Tramites from '../components/secciones/Tramites.astro';
+import Contacto from '../components/secciones/Contacto.astro';
 ---
 
 <Layout
   title="Dr. Felipe Hernández Serna | Pediatría y Neonatología en Saltillo"
-  description="Dr. Felipe Hernández Serna, médico especialista en Pediatría y Neonatología en Saltillo, Coahuila."
+  description="Dr. Felipe Hernández Serna, médico especialista en Pediatría y Neonatología en Saltillo, Coahuila. Atención con cita previa."
+  rutaCanonica="/"
 >
   <Header />
-  <main>
-    <InicioSection />
-    <SobreElDrSection />
-    <PediatriaNeonatologiaSection />
-    <FormacionTrayectoriaSection />
-    <ConsultorioContactoSection />
-    <UbicacionSection />
+  <main id="contenido-principal">
+    <Hero />
+    <Bienvenida />
+    <SobreElDoctor />
+    <Especialidades />
+    <Trayectoria />
+    <FilosofiaRoble />
+    <Recursos />
+    <PreguntasFrecuentes />
+    <Tramites />
+    <Contacto />
   </main>
   <Footer />
 </Layout>

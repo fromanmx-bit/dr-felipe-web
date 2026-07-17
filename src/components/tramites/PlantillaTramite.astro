@@ -1,0 +1,133 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../Header.astro';
+import Footer from '../Footer.astro';
+import Icono from '../ui/Icono.astro';
+
+interface Props {
+  titulo: string;
+  descripcion: string;
+  icono: 'factura' | 'documento' | 'correo';
+  resumen: string;
+  pasos: string[];
+  notaExtra?: string;
+  rutaCanonica: string;
+}
+
+const { titulo, descripcion, icono, resumen, pasos, notaExtra, rutaCanonica } = Astro.props;
+---
+
+<Layout title={`${titulo} | Dr. Felipe Hernández Serna`} description={descripcion} rutaCanonica={rutaCanonica}>
+  <Header />
+  <main id="contenido-principal">
+    <section class="seccion tramite">
+      <div class="contenedor contenedor--lectura">
+        <a class="tramite__volver" href="/#tramites">← Volver a Trámites</a>
+
+        <span class="tramite__icono-envoltura">
+          <Icono nombre={icono} clase="tramite__icono" />
+        </span>
+
+        <p class="etiqueta-superior">Trámites para pacientes</p>
+        <h1>{titulo}</h1>
+        <p class="tramite__resumen">{resumen}</p>
+
+        <h2 class="tramite__subtitulo">Proceso a seguir</h2>
+        <ol class="tramite__pasos">
+          {pasos.map((paso) => (
+            <li>{paso}</li>
+          ))}
+        </ol>
+
+        {notaExtra && <p class="tramite__nota-extra">{notaExtra}</p>}
+
+        <div class="nota-aviso tramite__aviso">
+          <p>
+            La solicitud no implica emisión automática. El consultorio
+            confirmará los requisitos, disponibilidad, plazo y, cuando
+            corresponda, costo.
+          </p>
+        </div>
+
+        <div class="tramite__cta">
+          <a class="boton boton--primario" href="https://wa.me/525563176446" target="_blank" rel="noopener noreferrer">
+            Iniciar por WhatsApp
+          </a>
+          <a class="boton boton--secundario" href="mailto:drfhernandez@drfelipehs.com">
+            Escribir por correo
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .tramite {
+    padding-top: var(--e-xl);
+  }
+
+  .tramite__volver {
+    display: inline-block;
+    margin-bottom: var(--e-lg);
+    font-size: 0.9rem;
+    color: var(--color-texto-suave);
+    text-decoration: none;
+  }
+
+  .tramite__volver:hover {
+    color: var(--color-turquesa);
+  }
+
+  .tramite__icono-envoltura {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: var(--radio-sm);
+    background-color: var(--color-turquesa-suave);
+    margin-bottom: var(--e-md);
+  }
+
+  .tramite__icono {
+    width: 26px;
+    height: 26px;
+    color: var(--color-turquesa);
+  }
+
+  .tramite__resumen {
+    font-size: 1.1rem;
+    color: var(--color-azul-tinta);
+  }
+
+  .tramite__subtitulo {
+    margin-top: var(--e-lg);
+  }
+
+  .tramite__pasos {
+    display: grid;
+    gap: var(--e-sm);
+    padding-left: 1.2rem;
+    margin-bottom: var(--e-lg);
+  }
+
+  .tramite__pasos li {
+    padding-left: 0.3rem;
+  }
+
+  .tramite__nota-extra {
+    font-size: 0.92rem;
+  }
+
+  .tramite__aviso {
+    margin: var(--e-lg) 0;
+  }
+
+  .tramite__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--e-xs);
+  }
+</style>

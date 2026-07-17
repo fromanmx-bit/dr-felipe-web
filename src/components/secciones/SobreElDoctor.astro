@@ -1,0 +1,83 @@
+---
+const principios = [
+  'Valoración clínica cuidadosa',
+  'Conocimiento médico actualizado',
+  'Comunicación clara',
+  'Trato humano y respetuoso',
+];
+---
+
+<section id="el-doctor" class="seccion seccion--cremosa" aria-label="Sobre el Dr. Felipe">
+  <div class="contenedor sobre-doctor__grid">
+    <div class="sobre-doctor__texto">
+      <p class="etiqueta-superior">Sobre el Dr. Felipe</p>
+      <h2>Experiencia médica con trato humano</h2>
+      <p>
+        El Dr. Felipe Hernández Serna es Médico Pediatra y Neonatólogo,
+        formado en la Universidad Nacional Autónoma de México.
+      </p>
+      <p>
+        Realizó la especialidad en Pediatría en el Hospital Pediátrico
+        Tacubaya–UNAM y la especialidad en Neonatología en el Hospital de la
+        Mujer–UNAM. Cuenta con certificación en Pediatría y en Neonatología.
+      </p>
+      <p>
+        Su trayectoria incluye atención clínica y hospitalaria, actividades
+        docentes, participación académica y actualización médica continua.
+      </p>
+    </div>
+
+    <aside class="sobre-doctor__aside" aria-label="Principios de atención">
+      <ul class="sobre-doctor__principios">
+        {principios.map((principio) => (
+          <li>{principio}</li>
+        ))}
+      </ul>
+      <blockquote class="cita">Medicina con ciencia, experiencia y cercanía.</blockquote>
+    </aside>
+  </div>
+</section>
+
+<style>
+  .sobre-doctor__grid {
+    display: grid;
+    gap: var(--e-xl);
+  }
+
+  .sobre-doctor__texto p {
+    max-width: var(--ancho-lectura);
+  }
+
+  .sobre-doctor__principios {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--e-lg);
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  .sobre-doctor__principios li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin: 0;
+    font-weight: 600;
+    color: var(--color-azul-profundo);
+  }
+
+  .sobre-doctor__principios li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--color-turquesa);
+  }
+
+  @media (min-width: 900px) {
+    .sobre-doctor__grid {
+      grid-template-columns: 1.3fr 0.9fr;
+    }
+  }
+</style>

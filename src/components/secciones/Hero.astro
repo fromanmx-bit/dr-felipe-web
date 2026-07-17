@@ -1,0 +1,174 @@
+---
+import MarcoImagen from '../ui/MarcoImagen.astro';
+import MotivoRama from '../ui/MotivoRama.astro';
+import Icono from '../ui/Icono.astro';
+---
+
+<section id="inicio" class="hero" aria-label="Portada">
+  <div class="contenedor hero__grid">
+    <div class="hero__contenido">
+      <p class="etiqueta-superior">Pediatría y Neonatología en Saltillo</p>
+      <h1 class="hero__titulo">Dr. Felipe Hernández Serna</h1>
+
+      <p class="hero__apoyo">
+        Atención médica especializada para recién nacidos, bebés y niños, con
+        una práctica basada en experiencia clínica, actualización médica y
+        trato humano.
+      </p>
+
+      <p class="hero__complementario">
+        Desde los primeros días de vida, cada etapa plantea preguntas y
+        decisiones importantes. La consulta busca acompañar a las familias
+        mediante una valoración cuidadosa, información clara y orientación
+        profesional.
+      </p>
+
+      <div class="hero__meta">
+        <span class="hero__meta-item">
+          <Icono nombre="ubicacion" clase="hero__meta-icono" />
+          Saltillo, Coahuila
+        </span>
+        <span class="hero__meta-item">
+          <Icono nombre="reloj" clase="hero__meta-icono" />
+          Atención únicamente con cita previa
+        </span>
+      </div>
+
+      <div class="hero__botones">
+        <a
+          class="boton boton--primario"
+          href="https://wa.me/525563176446"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icono nombre="whatsapp" clase="hero__boton-icono" />
+          Agendar por WhatsApp
+        </a>
+        <a class="boton boton--secundario" href="#el-doctor">
+          Conocer al Dr. Felipe
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__visual">
+      <MarcoImagen
+        variante="retrato"
+        ratio="4 / 5"
+        etiqueta="Fotografía profesional del Dr. Felipe"
+        notaDesarrollo="retrato-dr-felipe.jpg · 480 × 600 px aprox."
+        anchoMaximo="420px"
+      />
+    </div>
+  </div>
+
+  <div class="contenedor hero__cierre">
+    <MotivoRama clase="hero__motivo" />
+    <p class="cita hero__lema">&ldquo;Cada nueva huella, una historia que contar.&rdquo;</p>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: var(--e-lg) 0 var(--e-2xl);
+    background: radial-gradient(circle at 85% -10%, rgba(47, 157, 149, 0.09), transparent 55%),
+      linear-gradient(180deg, var(--color-crema) 0%, var(--color-blanco) 62%);
+  }
+
+  .hero__grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--e-xl);
+  }
+
+  .hero__titulo {
+    margin-bottom: var(--e-sm);
+  }
+
+  .hero__apoyo {
+    font-size: 1.12rem;
+    color: var(--color-azul-tinta);
+  }
+
+  .hero__complementario {
+    color: var(--color-texto-suave);
+  }
+
+  .hero__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: var(--e-md);
+  }
+
+  .hero__meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--color-azul-profundo);
+  }
+
+  .hero__meta-icono {
+    width: 18px;
+    height: 18px;
+    color: var(--color-turquesa);
+    flex-shrink: 0;
+  }
+
+  .hero__botones {
+    display: flex;
+    flex-direction: column;
+    gap: var(--e-xs);
+  }
+
+  .hero__boton-icono {
+    width: 19px;
+    height: 19px;
+  }
+
+  .hero__visual {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero__cierre {
+    margin-top: var(--e-2xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--e-sm);
+    text-align: center;
+  }
+
+  .hero__lema {
+    border: none;
+    padding: 0;
+    max-width: 30rem;
+  }
+
+  @media (min-width: 900px) {
+    .hero__grid {
+      flex-direction: row;
+      align-items: center;
+      gap: var(--e-2xl);
+    }
+
+    .hero__contenido {
+      flex: 1 1 56%;
+    }
+
+    .hero__visual {
+      flex: 1 1 44%;
+    }
+
+    .hero__meta {
+      flex-direction: row;
+      gap: var(--e-lg);
+    }
+
+    .hero__botones {
+      flex-direction: row;
+    }
+  }
+</style>

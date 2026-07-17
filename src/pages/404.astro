@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Página no encontrada | Dr. Felipe Hernández Serna"
+  description="La página que buscas no está disponible."
+  rutaCanonica="/404/"
+>
+  <Header />
+  <main id="contenido-principal">
+    <section class="seccion pagina-404">
+      <div class="contenedor contenedor--lectura pagina-404__interior">
+        <p class="etiqueta-superior">Página no encontrada</p>
+        <h1>Esta página no está disponible</h1>
+        <p>
+          El contenido que buscas pudo haberse movido o todavía no existe.
+          Puedes volver al inicio o contactar directamente al consultorio.
+        </p>
+        <div class="pagina-404__acciones">
+          <a class="boton boton--primario" href="/">Volver al inicio</a>
+          <a class="boton boton--secundario" href="https://wa.me/525563176446" target="_blank" rel="noopener noreferrer">
+            Escribir por WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .pagina-404 {
+    padding-top: var(--e-2xl);
+    padding-bottom: var(--e-2xl);
+  }
+
+  .pagina-404__interior {
+    text-align: center;
+  }
+
+  .pagina-404__acciones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--e-xs);
+  }
+</style>

@@ -1,0 +1,82 @@
+---
+const especialidades = [
+  {
+    titulo: 'Neonatología',
+    texto:
+      'Se enfoca en la valoración y atención especializada del recién nacido, especialmente durante sus primeras semanas de vida y en situaciones que requieren vigilancia cercana.',
+  },
+  {
+    titulo: 'Pediatría',
+    texto:
+      'Acompaña la salud del niño durante su crecimiento, orienta a la familia y ayuda a detectar oportunamente situaciones que requieren seguimiento.',
+  },
+];
+
+const formacionComplementaria = [
+  'Ultrasonido transfontanelar',
+  'Ultrasonido pulmonar',
+  'Nutrición neonatal',
+  'Colocación y uso de óxido nítrico',
+  'Cuidados intensivos',
+];
+---
+
+<section id="especialidades" class="seccion" aria-label="Pediatría y Neonatología">
+  <div class="contenedor">
+    <div class="encabezado-seccion encabezado-seccion--centrado">
+      <p class="etiqueta-superior">Especialidades</p>
+      <h2>Atención desde los primeros días de vida</h2>
+    </div>
+
+    <div class="rejilla rejilla--2 especialidades__rejilla">
+      {especialidades.map((especialidad) => (
+        <article class="tarjeta especialidades__tarjeta">
+          <h3>{especialidad.titulo}</h3>
+          <p>{especialidad.texto}</p>
+        </article>
+      ))}
+    </div>
+
+    <div class="especialidades__formacion">
+      <h3 class="especialidades__formacion-titulo">Formación complementaria</h3>
+      <ul class="especialidades__tags">
+        {formacionComplementaria.map((tema) => (
+          <li class="insignia">{tema}</li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .especialidades__rejilla {
+    margin-bottom: var(--e-xl);
+  }
+
+  .especialidades__tarjeta p {
+    margin-bottom: 0;
+  }
+
+  .especialidades__formacion {
+    text-align: center;
+  }
+
+  .especialidades__formacion-titulo {
+    font-family: var(--fuente-base);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-texto-suave);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .especialidades__tags {
+    list-style: none;
+    padding: 0;
+    margin: var(--e-sm) 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+</style>

@@ -1,0 +1,109 @@
+---
+import Icono from '../ui/Icono.astro';
+
+const preguntas = [
+  {
+    pregunta: '¿Cómo puedo solicitar una consulta?',
+    respuesta: 'Puede solicitar información y disponibilidad mediante WhatsApp. La atención se ofrece únicamente con cita previa.',
+  },
+  {
+    pregunta: '¿Dónde se encuentra el consultorio?',
+    respuesta: 'Blvd. Venustiano Carranza 4036, Consultorio 75, C.P. 25230, Saltillo, Coahuila.',
+  },
+  {
+    pregunta: '¿Qué es la Pediatría?',
+    respuesta: 'Es la especialidad médica dedicada a la salud de los niños durante sus diferentes etapas de crecimiento y desarrollo.',
+  },
+  {
+    pregunta: '¿Qué es la Neonatología?',
+    respuesta: 'Es el área médica dedicada a la valoración y atención especializada de los recién nacidos, especialmente durante sus primeras semanas de vida.',
+  },
+  {
+    pregunta: '¿Qué debo llevar a la consulta?',
+    respuesta: 'De manera general puede resultar útil llevar información médica previa, estudios recientes, lista de medicamentos, cartilla o documentos relacionados con el nacimiento, y las dudas que la familia desea resolver.',
+  },
+  {
+    pregunta: '¿Cómo solicito una factura?',
+    respuesta: 'La sección de facturación permite conocer el proceso para proporcionar los datos fiscales y, cuando corresponda, adjuntar un comprobante de pago.',
+  },
+  {
+    pregunta: '¿Cómo solicito un informe médico?',
+    respuesta: 'La solicitud debe identificar al paciente, el documento requerido, el motivo y el destinatario. Será revisada antes de confirmar disponibilidad, requisitos, plazo y posible costo.',
+  },
+  {
+    pregunta: '¿La información del sitio sustituye una consulta?',
+    respuesta: 'No. El contenido del sitio es educativo y no sustituye una valoración médica.',
+  },
+];
+---
+
+<section id="preguntas-frecuentes" class="seccion seccion--cremosa" aria-label="Preguntas frecuentes">
+  <div class="contenedor">
+    <div class="encabezado-seccion encabezado-seccion--centrado">
+      <p class="etiqueta-superior">Preguntas frecuentes</p>
+      <h2>Dudas comunes antes de la consulta</h2>
+    </div>
+
+    <div class="acordeon">
+      {preguntas.map((item) => (
+        <details class="acordeon__item">
+          <summary class="acordeon__pregunta">
+            <span>{item.pregunta}</span>
+            <Icono nombre="chevron" clase="acordeon__icono" />
+          </summary>
+          <p class="acordeon__respuesta">{item.respuesta}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .acordeon {
+    max-width: var(--ancho-lectura);
+    margin: 0 auto;
+    display: grid;
+    gap: var(--e-xs);
+  }
+
+  .acordeon__item {
+    background-color: var(--color-blanco);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-md);
+    padding: 0.25rem var(--e-md);
+  }
+
+  .acordeon__pregunta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--e-sm);
+    padding: var(--e-sm) 0;
+    font-weight: 600;
+    color: var(--color-azul-profundo);
+    cursor: pointer;
+    list-style: none;
+    min-height: 44px;
+  }
+
+  .acordeon__pregunta::-webkit-details-marker {
+    display: none;
+  }
+
+  .acordeon__icono {
+    width: 18px;
+    height: 18px;
+    color: var(--color-turquesa);
+    flex-shrink: 0;
+    transition: transform var(--duracion) ease;
+  }
+
+  .acordeon__item[open] .acordeon__icono {
+    transform: rotate(180deg);
+  }
+
+  .acordeon__respuesta {
+    margin: 0 0 var(--e-sm);
+    color: var(--color-texto-suave);
+  }
+</style>

@@ -1,30 +1,106 @@
+---
+import MotivoRama from './ui/MotivoRama.astro';
+---
+
 <footer class="pie">
   <div class="contenedor pie__interior">
-    <p class="pie__nombre">Dr. Felipe Hernández Serna</p>
-    <p class="pie__detalle">Cédulas profesionales: 8284861 · 9143269</p>
-    <p class="pie__detalle">drfelipehs.com</p>
+    <div class="pie__marca">
+      <p class="pie__nombre">Dr. Felipe Hernández Serna</p>
+      <p class="pie__especialidad">Pediatría y Neonatología · Saltillo, Coahuila</p>
+      <MotivoRama clase="pie__motivo" />
+      <p class="pie__lema">&ldquo;Cada nueva huella, una historia que contar.&rdquo;</p>
+    </div>
+
+    <nav class="pie__enlaces" aria-label="Enlaces del pie de página">
+      <a href="#inicio">Inicio</a>
+      <a href="#el-doctor">El Dr. Felipe</a>
+      <a href="#recursos">Recursos</a>
+      <a href="#tramites">Trámites</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="pie__legal">
+      <p>Cédulas profesionales: 8284861 · 9143269</p>
+      <p>drfelipehs.com</p>
+      <p class="pie__aviso">
+        El contenido de este sitio es educativo y no sustituye una valoración médica.
+      </p>
+      <p class="pie__anio">&copy; {new Date().getFullYear()} Dr. Felipe Hernández Serna</p>
+    </div>
   </div>
 </footer>
 
 <style>
   .pie {
-    background-color: var(--azul-profundo);
-    color: var(--blanco);
+    background-color: var(--color-azul-profundo);
+    color: rgba(255, 255, 255, 0.82);
   }
 
   .pie__interior {
-    padding: var(--espacio-lg) var(--espacio-md);
-    text-align: center;
+    padding: var(--e-xl) var(--e-md) var(--e-lg);
+    display: grid;
+    gap: var(--e-lg);
   }
 
   .pie__nombre {
-    font-weight: 600;
-    margin-bottom: var(--espacio-sm);
+    font-family: var(--fuente-editorial);
+    color: var(--color-blanco);
+    font-size: 1.3rem;
+    margin: 0 0 0.35rem;
   }
 
-  .pie__detalle {
-    margin: 0;
+  .pie__especialidad {
+    margin: 0 0 var(--e-sm);
     font-size: 0.9rem;
-    opacity: 0.85;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .pie__motivo {
+    color: var(--color-dorado);
+    margin-bottom: var(--e-sm);
+  }
+
+  .pie__lema {
+    font-family: var(--fuente-editorial);
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+  }
+
+  .pie__enlaces {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--e-sm) var(--e-md);
+  }
+
+  .pie__enlaces a {
+    color: rgba(255, 255, 255, 0.78);
+    text-decoration: none;
+    font-size: 0.92rem;
+  }
+
+  .pie__enlaces a:hover {
+    color: var(--color-blanco);
+  }
+
+  .pie__legal p {
+    margin: 0 0 0.4rem;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .pie__aviso {
+    max-width: 30rem;
+  }
+
+  .pie__anio {
+    margin-top: var(--e-sm);
+  }
+
+  @media (min-width: 900px) {
+    .pie__interior {
+      grid-template-columns: 1.3fr 1fr 1fr;
+      align-items: start;
+    }
   }
 </style>

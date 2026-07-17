@@ -1,0 +1,91 @@
+---
+import MarcoImagen from '../ui/MarcoImagen.astro';
+---
+
+<section id="filosofia" class="seccion seccion--profunda" aria-label="Filosofía de atención y significado del roble">
+  <div class="contenedor filosofia__grid">
+    <div class="filosofia__texto">
+      <p class="etiqueta-superior">Filosofía de atención</p>
+      <h2>Una consulta también debe ofrecer claridad y tranquilidad</h2>
+      <p>
+        Cuando un niño o un recién nacido necesita atención médica, es
+        natural que la familia tenga dudas o incertidumbre.
+      </p>
+      <p>
+        Una parte fundamental de la consulta es escuchar, explicar los
+        hallazgos de forma comprensible y orientar sobre los siguientes
+        pasos. El propósito es que cada decisión médica se tome con
+        información clara, criterio profesional y respeto por las
+        necesidades del paciente.
+      </p>
+    </div>
+
+    <div class="filosofia__roble">
+      <MarcoImagen
+        variante="simbolo"
+        ratio="4 / 5"
+        etiqueta="Símbolo del roble de huellas"
+        notaDesarrollo="simbolo-roble.svg"
+        anchoMaximo="300px"
+      />
+      <div class="filosofia__roble-texto">
+        <h3>Cada nueva huella representa una historia</h3>
+        <p>
+          El símbolo del Dr. Felipe es un roble formado por huellas de
+          bebés. El roble representa fortaleza, crecimiento, estabilidad y
+          protección; las huellas representan el inicio de una vida y la
+          historia única de cada niño.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contenedor filosofia__cierre">
+    <blockquote class="cita filosofia__cita">
+      &ldquo;La mejor medicina se practica con ciencia y con corazón.&rdquo;
+    </blockquote>
+  </div>
+</section>
+
+<style>
+  .filosofia__grid {
+    display: grid;
+    gap: var(--e-2xl);
+  }
+
+  .filosofia__texto p {
+    max-width: 32rem;
+  }
+
+  .filosofia__roble {
+    display: grid;
+    justify-items: center;
+    gap: var(--e-md);
+    text-align: center;
+  }
+
+  .filosofia__roble-texto p {
+    max-width: 26rem;
+    margin-inline: auto;
+  }
+
+  .filosofia__cierre {
+    margin-top: var(--e-2xl);
+    display: flex;
+    justify-content: center;
+  }
+
+  .filosofia__cita {
+    border-left-color: var(--color-dorado);
+    color: var(--color-blanco);
+    text-align: center;
+    max-width: 34rem;
+  }
+
+  @media (min-width: 900px) {
+    .filosofia__grid {
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+    }
+  }
+</style>
